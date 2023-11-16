@@ -1,5 +1,5 @@
-import 'package:csgo/matches_result_services.dart';
-import 'package:csgo/cs_model.dart';
+import 'package:csgo/product/service/matches_result_services.dart';
+import 'package:csgo/product/model/cs_model.dart';
 import 'package:flutter/material.dart';
 
 class MathResultView extends StatefulWidget {
@@ -11,7 +11,7 @@ class MathResultView extends StatefulWidget {
 
 class _MathResultViewState extends State<MathResultView> {
   final MatchResultService _matchResultService = MatchResultService();
-  late Future<List<MachModel>?> _matchResults;
+  late Future<List<MatchesResultModel>?> _matchResults;
   final String errorPath =
       "https://community.akamai.steamstatic.com/economy/image/IzMF03bi9WpSBq-S-ekoE33L-iLqGFHVaU25ZzQNQcXdB2ozio1RrlIWFK3UfvMYB8UsvjiMXojflsZalyxSh31CIyHz2GZ-KuFpPsrTzBGp8bPUU3biajXIKh7ICVt7CeoBaweFr3HysPORQz3NE7p4EgkNLKpS8G0bP5iANxpugIZY82HglBMrHEV-cJFFKVfuhGQdNvsmxy0dN8YXxWCpZsiQiFdlbEJuXq9lB0LZ/330x192";
 
@@ -33,16 +33,16 @@ class _MathResultViewState extends State<MathResultView> {
 
 class _MathResultFuture extends StatelessWidget {
   const _MathResultFuture({
-    required Future<List<MachModel>?> matchResults,
+    required Future<List<MatchesResultModel>?> matchResults,
     required this.errorPath,
   }) : _matchResults = matchResults;
 
-  final Future<List<MachModel>?> _matchResults;
+  final Future<List<MatchesResultModel>?> _matchResults;
   final String errorPath;
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<MachModel>?>(
+    return FutureBuilder<List<MatchesResultModel>?>(
       future: _matchResults,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -55,7 +55,6 @@ class _MathResultFuture extends StatelessWidget {
           return const Center(child: Text("Bir Hata İle Karşılaşıldı"));
         } else {
           final matchRespons = snapshot.data!;
-
           return ListView.separated(
               separatorBuilder: (context, index) => const Divider(
                     endIndent: 100,
@@ -95,7 +94,7 @@ class _MatchesCard extends StatelessWidget {
               children: [
                 _TeamLogoWidget(
                   errorPath: errorPath,
-                  logoPath: errorPath, //teamsRespons[0].logo ?? 
+                  logoPath: errorPath, //teamsRespons[0].logo ??
                 ),
                 Text(
                   teamsRespons[0].name ?? "hata",
@@ -121,7 +120,7 @@ class _MatchesCard extends StatelessWidget {
               children: [
                 _TeamLogoWidget(
                   errorPath: errorPath,
-                  logoPath:errorPath, //teamsRespons[1].logo ?? 
+                  logoPath: errorPath, //teamsRespons[1].logo ??
                 ),
                 Text(
                   teamsRespons[1].name ?? "Hata",
@@ -134,9 +133,6 @@ class _MatchesCard extends StatelessWidget {
     );
   }
 }
-
-@override
-void initState() {}
 
 class _TeamLogoWidget extends StatelessWidget {
   final String logoPath;
@@ -162,6 +158,7 @@ class _ResultContainer extends StatelessWidget {
   final String text;
   final String res2;
   const _ResultContainer({required this.text, required this.res2});
+
   bool resultControl(String result1, String result2) {
     final int res1 = int.parse(
       result1,

@@ -1,5 +1,5 @@
 
-import 'package:csgo/math_result.dart';
+import 'package:csgo/future/news/math_result_view.dart';
 import 'package:flutter/material.dart';
 
 

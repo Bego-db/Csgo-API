@@ -1,13 +1,13 @@
-class MachModel {
+class MatchesResultModel {
   Event? event;
   String? maps;
   String? time;
   List<Teams>? teams;
   int? matchId;
 
-  MachModel({this.event, this.maps, this.time, this.teams, this.matchId});
+  MatchesResultModel({this.event, this.maps, this.time, this.teams, this.matchId});
 
-  MachModel.fromJson(Map<String, dynamic> json) {
+  MatchesResultModel.fromJson(Map<String, dynamic> json) {
     event = json['event'] != null ? Event.fromJson(json['event']) : null;
     maps = json['maps'];
     time = json['time'];
