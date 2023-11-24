@@ -2,11 +2,8 @@
 
 "[https://hltv-api.vercel.app/](https://hltv-api.vercel.app/)" adresindeki API yi kullanarak maç sonuçlarını ve En iyi 30 takımı listeleyen basit bir uygulama
 Not : HLTV Türkiyede yaskalandığı için resim dosylarına erişim sağlanılmıyor 
-![Screenshot_1700790015](https://github.com/Bego-db/Csgo-API/assets/120643757/6e374e4b-096e-4914-988c-ad280a0cd932)
 
-
-![Screenshot_1700790040](https://github.com/Bego-db/Csgo-API/assets/120643757/bc0daa5b-1dcb-4d36-a886-bfb9f0c1b3ce![Screenshot_1700790040](https://github.com/Bego-db/Csgo-API/assets/120643757/4b672356-2203-40e6-83f8-b98c2e11abb3)
-)
+![Screenshot_1700790015](https://github.com/Bego-db/Csgo-API/assets/120643757/95d1d5e3-c357-4c27-8568-bb3571b3c158)
 
 
 ## Getting Started
