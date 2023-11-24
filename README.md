@@ -1,6 +1,7 @@
-# csgo
+# Flutter Dio ile Apı İşlemleri 
 
-A new Flutter project.
+"https://hltv-api.vercel.app/api/news.json" adresindeki API yi kullanarak maç sonuçlarını listeleyen basit bir uygulama
+
 
 ## Getting Started
 
