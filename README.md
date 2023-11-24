@@ -1,7 +1,7 @@
 # Flutter Dio ile Apı İşlemleri 
 
-"https://hltv-api.vercel.app/api/news.json" adresindeki API yi kullanarak maç sonuçlarını listeleyen basit bir uygulama
-Not : HLTV Türkiyede yaskalandığı için resim dosylarına erişim sağlanamıyor 
+"[https://hltv-api.vercel.app/](https://hltv-api.vercel.app/)" adresindeki API yi kullanarak maç sonuçlarını ve En iyi 30 takımı listeleyen basit bir uygulama
+Not : HLTV Türkiyede yaskalandığı için resim dosylarına erişim sağlanılmıyor 
 ![Screenshot_1700790015](https://github.com/Bego-db/Csgo-API/assets/120643757/6e374e4b-096e-4914-988c-ad280a0cd932)
 
 
