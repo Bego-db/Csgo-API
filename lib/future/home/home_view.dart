@@ -17,7 +17,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      extendBodyBehindAppBar: true,
       extendBody: true,
       appBar: const HomeViewAppBar(),
       bottomNavigationBar: const NavBar(),
@@ -36,6 +36,13 @@ class NavBar extends StatelessWidget {
     return Container(
       height: 60,
       decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+                color: Color(0xff7A7A7A),
+                blurRadius: 33,
+                spreadRadius: 11,
+                offset: Offset(0, -2))
+          ],
           color: Colors.black,
           borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
       child: const Padding(
@@ -57,24 +64,33 @@ class HomeViewAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      bottomOpacity: 9,
+    return Container(
       clipBehavior: Clip.antiAlias,
-      centerTitle: false,
-      excludeHeaderSemantics: true,
-      backgroundColor: Colors.black,
-      shape: const RoundedRectangleBorder(
-        
-        borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(24),
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+            color: Color(0xff7A7A7A),
+            blurRadius: 33,
+            spreadRadius: 11,
+            offset: Offset(0, 6))
+      ]),
+      child: AppBar(
+        bottomOpacity: 9,
+        clipBehavior: Clip.antiAlias,
+        centerTitle: false,
+        excludeHeaderSemantics: true,
+        backgroundColor: Colors.black,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(24),
+          ),
         ),
-      ),
-      title: Text(
-        "Welcome Back!",
-        style: Theme.of(context)
-            .textTheme
-            .titleLarge!
-            .copyWith(color: Colors.white),
+        title: Text(
+          "Welcome Back!",
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(color: Colors.white),
+        ),
       ),
     );
   }
