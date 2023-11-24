@@ -34,31 +34,35 @@ class _TopTeamsViewState extends State<TopTeamsView> {
             );
           } else {
             final topTeamsData = snapshot.data!;
-            return ListView.separated(
-              separatorBuilder: (context, index) =>
-                  const Padding(padding: EdgeInsets.only(bottom: 10)),
-              itemCount: topTeamsData.length,
-              itemBuilder: (context, index) {
-                final topTeamsPlayers = topTeamsData[index].players;
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      genislet = index;
-                    });
-                  },
-                  child: TeamsCardWidget(
-                    isActive: index == genislet,
-                    index: index,
-                    topTeamsPlayers: topTeamsPlayers,
-                    topTeamsData: topTeamsData,
-                  ),
-                );
-              },
-            );
+            return listViewTeamsCard(topTeamsData);
           }
         },
       ),
     );
+  }
+
+  ListView listViewTeamsCard(List<TopTeams> topTeamsData) {
+    return ListView.separated(
+            separatorBuilder: (context, index) =>
+                const Padding(padding: EdgeInsets.only(bottom: 10)),
+            itemCount: topTeamsData.length,
+            itemBuilder: (context, index) {
+              final topTeamsPlayers = topTeamsData[index].players;
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    genislet = index;
+                  });
+                },
+                child: TeamsCardWidget(
+                  isActive: index == genislet,
+                  index: index,
+                  topTeamsPlayers: topTeamsPlayers,
+                  topTeamsData: topTeamsData,
+                ),
+              );
+            },
+          );
   }
 }
 
@@ -211,7 +215,7 @@ class TeamsCardWidget extends StatelessWidget {
                       )
                     ],
                   )
-                : SizedBox()
+                : const SizedBox()
           ]),
         ),
       ),
